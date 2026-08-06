@@ -2007,3 +2007,215 @@ nav a:hover {
     }
 
 }
+/* =========================================
+   WHATSAPP FLUTUANTE
+========================================= */
+
+.whatsapp-flutuante {
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    background-color: #0b2135;
+    color: #ffffff;
+
+    border: 1px solid #c39152;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* ÍCONE */
+
+.whatsapp-flutuante svg {
+    width: 20px;
+    height: 20px;
+
+    stroke: #c39152;
+}
+
+
+/* HOVER */
+
+.whatsapp-flutuante:hover {
+    background-color: #102e47;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .whatsapp-flutuante {
+        right: 18px;
+        bottom: 20px;
+
+        width: 54px;
+        height: 54px;
+
+        padding: 0;
+
+        border-radius: 50%;
+
+        justify-content: center;
+    }
+
+    .whatsapp-flutuante span {
+        display: none;
+    }
+
+    .whatsapp-flutuante svg {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* Redes sociais do rodapé */
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Instagram e WhatsApp */
+.instagram-link,
+.whatsapp-link {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c9974f;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c9974f;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+/* Tamanho dos ícones */
+.instagram-link svg,
+.whatsapp-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Efeito ao passar o mouse */
+.instagram-link:hover,
+.whatsapp-link:hover {
+    background-color: #c9974f;
+    color: #08283d;
+    transform: translateY(-3px);
+}
+
+/* Corrige alinhamento do WhatsApp */
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-link svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0;
+    position: static;
+    transform: none;
+}
+
+.whatsapp-link {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c9974f;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c9974f;
+    text-decoration: none;
+}
+
+.whatsapp-link i {
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* CORREÇÃO FINAL WHATSAPP RODAPÉ */
+
+.whatsapp-link {
+    width: 50px !important;
+    height: 50px !important;
+    border: 1px solid #c9974f;
+    border-radius: 50%;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+    padding: 0 !important;
+}
+
+.whatsapp-link i.fa-whatsapp {
+    position: static !important;
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    font-size: 25px !important;
+    line-height: 1 !important;
+
+    transform: none !important;
+
+    color: #c9974f !important;
+}
+
+
+/* Remove borda branca do WhatsApp */
+.whatsapp-link {
+    border: 1px solid #c9974f !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.whatsapp-link:focus,
+.whatsapp-link:active,
+.whatsapp-link:visited {
+    border: 1px solid #c9974f !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
