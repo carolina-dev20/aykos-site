@@ -2070,6 +2070,180 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+/* =====================================================
+   FAQ - PERGUNTAS FREQUENTES
+===================================================== */
+
+.faq {
+    background-color: #faf9f6;
+    padding: 90px 8%;
+}
+
+.faq-cabecalho {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.faq-cabecalho span {
+    display: block;
+    color: #c39152;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.faq-cabecalho h2 {
+    color: #102e47;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    font-weight: 400;
+    margin: 0 0 15px;
+}
+
+.faq-cabecalho p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* CONTAINER */
+
+.faq-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    border-top: 1px solid #ddd6ca;
+}
+
+
+/* CADA PERGUNTA */
+
+.faq-item {
+    border-bottom: 1px solid #ddd6ca;
+    padding: 0;
+}
+
+
+/* PERGUNTA */
+
+.faq-item summary {
+    position: relative;
+
+    list-style: none;
+    cursor: pointer;
+
+    color: #102e47;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 25px 60px 25px 20px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* REMOVE SETA PADRÃO DO NAVEGADOR */
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    display: none;
+}
+
+
+/* SÍMBOLO + */
+
+.faq-item summary::after {
+    content: "+";
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #c39152;
+
+    font-size: 30px;
+    font-weight: 300;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* QUANDO ESTIVER ABERTO */
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+
+/* HOVER */
+
+.faq-item summary:hover {
+    color: #c39152;
+}
+
+
+/* RESPOSTA */
+
+.faq-item p {
+    color: #555;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    max-width: 900px;
+
+    padding: 0 60px 28px 20px;
+    margin: 0;
+}
+
+
+/* PEQUENA ANIMAÇÃO DA RESPOSTA */
+
+.faq-item[open] p {
+    animation: faqEntrada 0.3s ease;
+}
+
+@keyframes faqEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   FADE FAQ AO ENTRAR NA TELA
+===================================================== */
+
+.faq {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.faq.faq-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /* =========================================
    CELULAR
@@ -2089,6 +2263,99 @@ nav a:hover {
         border-radius: 50%;
 
         justify-content: center;
+
+
+/* ==========================================
+   FAQ - MOBILE
+========================================== */
+
+.faq {
+    padding: 60px 22px;
+}
+
+/* CABEÇALHO */
+
+.faq-cabecalho {
+    margin-bottom: 35px;
+}
+
+.faq-cabecalho span {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    margin-bottom: 10px;
+}
+
+.faq-cabecalho h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.faq-cabecalho p {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 5px;
+}
+
+
+/* CONTAINER */
+
+.faq-container {
+    width: 100%;
+}
+
+
+/* PERGUNTAS */
+
+.faq-item summary {
+    font-size: 16px;
+    line-height: 1.45;
+
+    padding: 20px 45px 20px 5px;
+}
+
+
+/* + E − */
+
+.faq-item summary::after {
+    right: 5px;
+
+    font-size: 26px;
+}
+
+
+/* RESPOSTAS */
+
+.faq-item p {
+    font-size: 14px;
+    line-height: 1.7;
+
+    padding: 0 35px 22px 5px;
+}
+
+
+/* MELHORA O TOQUE NO CELULAR */
+
+.faq-item summary {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* REMOVE EFEITO HOVER NO TOUCH */
+
+.faq-item summary:hover {
+    color: #102e47;
+}
+
+
+/* PERGUNTA ABERTA */
+
+.faq-item[open] summary {
+    color: #c39152;
+}
+
+
+
     }
 
     .whatsapp-flutuante span {

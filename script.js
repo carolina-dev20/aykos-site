@@ -166,3 +166,28 @@ document.querySelectorAll(".menu-mobile-links a").forEach(function(link) {
     });
 
 });
+
+
+/* ==========================================
+   FADE FAQ AO ENTRAR NA TELA
+========================================== */
+
+const faq = document.querySelector(".faq");
+
+if (faq) {
+    const faqObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("faq-visivel");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    faqObserver.observe(faq);
+}
