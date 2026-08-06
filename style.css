@@ -2047,11 +2047,19 @@ nav a:hover {
 
 /* ÍCONE */
 
-.whatsapp-flutuante svg {
-    width: 20px;
-    height: 20px;
+/* ÍCONE WHATSAPP */
 
-    stroke: #c39152;
+.whatsapp-flutuante i {
+    font-size: 28px !important;
+    color: #c39152 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
 }
 
 
