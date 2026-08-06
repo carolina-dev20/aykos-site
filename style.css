@@ -432,7 +432,7 @@ nav a:hover {
     background-color: #c39152;
     color: #ffffff;
 
-    font-family: Arial, sans-serif;
+    font-family: Arial, s
     font-size: 12px;
 
     text-decoration: none;
@@ -444,12 +444,459 @@ nav a:hover {
     background-color: #0b2135;
 }
 
+/* =====================================================
+   POR QUE ESCOLHER A AYKOS
+===================================================== */
+
+.diferenciais {
+    background-color:#102e47;
+    padding: 100px 8%;
+}
+
+
+/* CABEÇALHO */
+
+.diferenciais-cabecalho {
+    max-width: 750px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.diferenciais-cabecalho > span {
+    display: block;
+    color: #c39152;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+
+.diferenciais-cabecalho h2 {
+    color: #102e47;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin: 0 0 22px;
+}
+
+
+.diferenciais-cabecalho p {
+    max-width: 650px;
+
+    color: #555;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   GRID DOS DIFERENCIAIS
+===================================================== */
+
+.diferenciais-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+/* CADA DIFERENCIAL */
+
+.diferencial-item {
+    position: relative;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #e5dfd6;
+    border-radius: 3px;
+
+    padding: 42px 32px 38px;
+
+    min-height: 380px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 8px 30px rgba(16, 46, 71, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.diferencial-item::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 4px;
+
+    background-color: #102e47;
+
+    transition: width 0.4s ease;
+}
+
+.diferencial-item:hover::before {
+    width: 100%;
+}
+
+.diferencial-item:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(195, 145, 82, 0.45);
+
+    box-shadow: 0 18px 45px rgba(16, 46, 71, 0.12);
+}
+
+/* NÚMERO */
+
+.diferencial-numero {
+    position: absolute;
+
+    top: 18px;
+    right: 24px;
+
+    color: rgba(195, 145, 82, 0.13);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 82px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0;
+
+    margin: 0;
+
+    pointer-events: none;
+}
+
+/* TÍTULO */
+
+.diferencial-item h3 {
+    min-height: 62px;
+
+    display: flex;
+    align-items: flex-start;
+
+    color: #102e47;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin: 0 0 18px;
+}
+/texto /
+
+
+.diferencial-item p {
+    color: #555;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+.diferencial-item h3::before {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    background-color: #c39152;
+
+    margin: 0 auto 22px;
+}
+
+.diferencial-item h3 {
+    min-height: 62px;
+
+    color: #102e47;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+.diferencial-item h3 {
+    position: relative;
+
+    color: #102e47;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin: 40px 0 20px;
+}
+
+
+.diferencial-item p {
+    color: #555;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin: 0;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.diferenciais {
+    background: #f7f5f1;
+    padding: 110px 8% 120px;
+}
+
+
+.diferenciais {
+    background-color: #faf9f6;
+    padding: 100px 8%;
+}
+
+
+/* ÍCONES - POR QUE ESCOLHER A AYKOS */
+
+
+
+.diferencial-icone svg {
+    width: 42px;
+    height: 42px;
+
+    color: #c39152;
+    stroke: #c39152;
+
+    stroke-width: 1.4;
+}
+
+.diferencial-icone {
+    transition: transform 0.3s ease;
+}
+
+.diferencial-item:hover .diferencial-icone {
+    transform: translateY(-3px);
+}
+.diferencial-icone {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+
+    color: #c39152;
+
+    margin-bottom: 22px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
 
 /* =========================================
    RESPONSIVO
 ========================================= */
 
 @media (max-width: 900px) {
+
+/* =========================================
+   POR QUE ESCOLHER A AYKOS - MOBILE
+========================================= */
+
+.diferenciais {
+    padding: 70px 22px;
+}
+
+/* CABEÇALHO */
+
+.diferenciais-cabecalho {
+    max-width: 100%;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.diferenciais-cabecalho > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.diferenciais-cabecalho h2 {
+    font-size: 36px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.diferenciais-cabecalho p {
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 100%;
+}
+
+
+/* CARDS */
+
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+}
+
+
+/* CARD INDIVIDUAL */
+
+.diferencial-item {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+
+    padding: 32px 28px 35px;
+
+    box-sizing: border-box;
+}
+
+
+/* ÍCONE */
+
+.diferencial-icone {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 18px;
+}
+
+.diferencial-icone svg {
+    width: 38px;
+    height: 38px;
+}
+
+
+/* NÚMERO DE FUNDO */
+
+.diferencial-numero {
+    top: 18px;
+    right: 20px;
+
+    font-size: 72px;
+}
+
+
+/* TÍTULO */
+
+.diferencial-item h3 {
+    min-height: 0;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    margin-bottom: 16px;
+}
+
+
+/* LINHA DOURADA */
+
+.diferencial-item h3::before {
+    width: 42px;
+
+    margin: 0 auto 20px;
+}
+
+
+/* TEXTO */
+
+.diferencial-item p {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SOBRE A AYKOS - FOTO MOBILE */
+
+.aykos-sobre-foto {
+    width: 82%;
+    max-width: 320px;
+    height: 280px;
+
+    flex: none;
+
+    margin: 0 auto 35px;
+
+    overflow: hidden;
+}
+
+.aykos-sobre-foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    display: block;
+}
+
+
 
     .sobre {
         grid-template-columns: 1fr;
@@ -2493,4 +2940,43 @@ nav a:hover {
     border: 1px solid #c9974f !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+
+/* =========================================
+   ANIMAÇÃO - DIFERENCIAIS
+========================================= */
+
+.diferencial-item {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.diferencial-item.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Entrada em sequência */
+
+.diferencial-item:nth-child(1).aparecer {
+    transition-delay: 0.05s;
+}
+
+.diferencial-item:nth-child(2).aparecer {
+    transition-delay: 0.15s;
+}
+
+.diferencial-item:nth-child(3).aparecer {
+    transition-delay: 0.25s;
+}
+
+.diferencial-item:nth-child(4).aparecer {
+    transition-delay: 0.35s;
 }

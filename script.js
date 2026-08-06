@@ -191,3 +191,32 @@ if (faq) {
 
     faqObserver.observe(faq);
 }
+
+/* =========================================
+   ANIMAÇÃO DOS DIFERENCIAIS
+========================================= */
+
+const cardsDiferenciais = document.querySelectorAll(".diferencial-item");
+
+const observerDiferenciais = new IntersectionObserver(
+    (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("aparecer");
+
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.20
+    }
+);
+
+cardsDiferenciais.forEach((card) => {
+    observerDiferenciais.observe(card);
+});
