@@ -19,170 +19,315 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-    <header>
+ <header class="navbar">
+    <div class="nav-logo">
+       <img src="assets/images/logo-aykos.jpeg" alt="AYKOS Consultoria e Regulamentação">
+    </div>
 
-        <div class="logo">
-            AYKOS
-            <span>CONSULTORIA E REGULAMENTAÇÃO</span>
-        </div>
-
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#sobre">SOBRE</a>
-            <a href="#servicos">SERVIÇOS</a>
-            <a href="#atuacao">ATUAÇÃO</a>
-            <a href="#insights">FQA</a>
-            <a href="#contato">CONTATO</a>
-        </nav>
-
-       <a
-    class="botao-contato"
-    href="https://wa.me/55SEUNUMERO?text=Olá!%20Vim%20pelo%20site%20da%20AYKOS%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços."
-    target="_blank"
->
-    FALE COM UM ESPECIALISTA
-</a>
-
-<button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
-    ☰
-</button>
-
-    </header>
-
-<div class="menu-mobile-overlay" id="menu-overlay">
-
-   
-   
-   
-    <button class="fechar-menu" id="fechar-menu" aria-label="Fechar menu">
-        ×
-    </button>
-
-    <nav class="menu-mobile-links">
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#atuacao">Atuação</a>
-        <a href="#insights">FQA</a>
-        <a href="#contato">Contato</a>
+    <nav>
+        <a href="#inicio" class="active">INÍCIO</a>
+        <a href="#quem-somos">QUEM SOMOS</a>
+        <a href="#servicos">SERVIÇOS</a>
+        <a href="#diferenciais">DIFERENCIAIS</a>
+        <a href="#contato">CONTATO</a>
     </nav>
 
-</div>
+    <a href="#contato" class="nav-button">FALE CONOSCO</a>
+</header>
 
-    <main>
 
-        <section id="home" class="hero">
+<section id="inicio" class="hero">
 
-           <div class="hero-texto entrada entrada-1">
+    <!-- brilho decorativo -->
+    <div class="hero-glow"></div>
+    <div class="hero-ring"></div>
 
-                <h1>
-                    SEGURANÇA<br>
-                    REGULATÓRIA.<br>
-                    CONFIANÇA PARA<br>
-                    <span>INOVAR.</span>
-                </h1>
+    <div class="hero-content">
 
-            
-                     <p>
-    Consultoria regulatória e sanitária para empresas 
-    que buscam regularizar produtos, estabelecimentos e processos 
-    com segurança, agilidade e conformidade.
+    
+                 
+                 
+        </div>
+
+        <div class="hero-line"></div>
+
+
+        <h1 class="titulo-fade">
+    Transformamos complexidade
+    regulatória
+    <span>em segurança para o seu negócio.</span>
+</h1>
+
+        <p class="subtitulo-fade">
+    Soluções regulatórias personalizadas para impulsionar sua empresa, atuando na
+    regularização junto à Vigilância Sanitária e demais órgãos regulatórios, além de
+    oferecer treinamentos e suporte estratégico para garantir conformidade, eficiência e
+    segurança.
 </p>
-            
 
-                <a href="#servicos" class="botao">
-                    CONHEÇA NOSSOS SERVIÇOS
-                </a>
+        <a href="#servicos" class="hero-button">
+            CONHEÇA NOSSA ATUAÇÃO
+            <span>→</span>
+        </a>
 
-            </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
 
-            <div class="hero-logo entrada entrada-2">
-    <img 
-        src="assets/images/logo-aykos.jpeg"
-        alt="AYKOS Consultoria e Regulamentação"
-        class="hero-logo-img"
-    >
-</div>
+    </div>
+
+    
+</section>  
+      
+
 
         </section>
 
        
         <!-- SEÇÃO DE SERVIÇOS -->
 
-       <section id="servicos" class="servicos reveal">
+       <!-- =========================================
+     ÁREAS DE ATUAÇÃO
+========================================= -->
 
-            <!-- aqui vamos colocar o conteúdo dos serviços -->
-        </section>
+<section class="areas-atuacao" id="servicos">
 
+    <div class="areas-header">
 
-        <!-- SEÇÃO DE SERVIÇOS -->
-
-       <section id="servicos" class="servicos">
-
-    <div class="servicos-titulo reveal">
-        <h2>
-            COMO PODEMOS<br>
-            TE AJUDAR
-        </h2>
-
-        <div class="linha-dourada"></div>
-    </div>
-
-
-    <div class="servico-card reveal delay-1">
-        <div class="servico-icone">
-            <i data-lucide="file-check-2"></i>
+        <div class="areas-eyebrow">
+            NÓS RESOLVEMOS
         </div>
 
-        <h3>REGULATÓRIO</h3>
+      <h2 class="titulo-solucoes">
+    Soluções completas em
+    <span>conformidade regulatória.</span>
+</h2>
 
-        <p>
-            Suporte completo em processos regulatórios
-            junto à ANVISA e outros órgãos competentes.
-        </p>
+<p class="subtitulo-solucoes">
+    Atuamos de ponta a ponta para garantir que sua empresa esteja em conformidade,
+    reduzindo riscos e impulsionando resultados.
+</p>
     </div>
 
 
-    <div class="servico-card reveal delay-2">
-        <div class="servico-icone">
-            <i data-lucide="shield-check"></i>
+    <!-- =========================
+         4 CARDS PRINCIPAIS
+    ========================== -->
+
+    <div class="areas-grid">
+
+
+        <!-- AUDITORIA -->
+        <article class="area-card">
+
+            <div class="area-icon">
+                <i class="fa-regular fa-clipboard"></i>
+            </div>
+
+            <h3>AUDITORIA</h3>
+
+            <div class="area-line"></div>
+
+            <p>
+                Realizamos auditorias detalhadas para garantir que sua empresa
+                esteja sempre em conformidade com as normas regulatórias,
+                evitando multas e prejuízos operacionais.
+            </p>
+
+            <ul>
+                <li>Identificação de não conformidades e riscos regulatórios</li>
+                <li>Relatórios estratégicos para embasar decisões gerenciais</li>
+                <li>Acompanhamento e plano de ação para regularização</li>
+                <li>Adequação às exigências legais, conforme normas e órgãos</li>
+            </ul>
+
+        </article>
+
+
+       <!-- LEGALIZAÇÃO -->
+<article class="area-card">
+            <div class="area-icon">
+                <i class="fa-regular fa-building"></i>
+            </div>
+
+            <h3>LEGALIZAÇÃO</h3>
+
+            <div class="area-line"></div>
+
+            <p>
+                Somos especialistas em legalização para todos os segmentos,
+                garantindo que sua empresa atenda às exigências legais
+                com agilidade e segurança.
+            </p>
+
+            <ul>
+                <li>Licenciamento sanitário</li>
+                <li>Regularização de empresas e produtos</li>
+                <li>Processos de legalização</li>
+                <li>Acompanhamento documental e renovação de licenças</li>
+            </ul>
+
+        </article>
+
+
+        <!-- COMPLIANCE -->
+        <article class="area-card">
+
+            <div class="area-icon">
+                <i class="fa-regular fa-circle-check"></i>
+            </div>
+
+            <h3>COMPLIANCE</h3>
+
+            <div class="area-line"></div>
+
+            <p>
+                Garantimos que sua empresa esteja sempre em conformidade
+                com as normas e regulamentações, reduzindo riscos e
+                fortalecendo sua credibilidade no mercado.
+            </p>
+
+            <ul>
+                <li>Mapeamento e gestão de riscos regulatórios</li>
+                <li>Implementação de processos eficazes</li>
+                <li>Adequação às normas aplicáveis</li>
+                <li>Auditoria e monitoramento contínuo</li>
+            </ul>
+
+        </article>
+
+
+        <!-- TREINAMENTOS -->
+        <article class="area-card">
+
+            <div class="area-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <h3>TREINAMENTOS</h3>
+
+            <div class="area-line"></div>
+
+            <p>
+                Capacitação personalizada para times que buscam
+                performance e atualização contínua.
+            </p>
+
+            <ul>
+                <li>Treinamentos in company e online</li>
+                <li>Conteúdo atualizado conforme legislações vigentes</li>
+                <li>Programas sob medida para as necessidades da sua empresa</li>
+                <li>Desenvolvimento de competências técnicas e regulatórias</li>
+            </ul>
+
+        </article>
+
+    </div>
+
+
+    <!-- =========================
+         LEGALIZAÇÃO — SEGUNDO NÍVEL
+    ========================== -->
+
+    <div class="legalizacao-detalhes">
+
+        <div class="legalizacao-info">
+
+            <div class="legalizacao-title">
+
+                <div class="area-icon">
+                    <i class="fa-regular fa-building"></i>
+                </div>
+
+                <div>
+                    <h3>LEGALIZAÇÃO &amp; REGULARIZAÇÃO</h3>
+
+                    <p>
+                        Atuamos na condução e acompanhamento de processos
+                        junto aos principais órgãos e autoridades competentes.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="orgaos-grid">
+
+                <span>Vigilância Sanitária</span>
+                <span>ANVISA</span>
+                <span>MAPA</span>
+                <span>Conselhos Regionais</span>
+
+                <span>Prefeituras</span>
+                <span>Corpo de Bombeiros</span>
+                <span>IBAMA</span>
+                <span>Polícia Civil</span>
+
+                <span>Polícia Federal</span>
+                <span>Exército</span>
+                <span>Portos e Aeroportos</span>
+                <span>Publicidade e Anúncios</span>
+
+            </div>
+
+            <div class="outros-orgaos">
+                E entre outros órgãos e entidades.
+            </div>
+
         </div>
 
-        <h3>QUALIDADE</h3>
 
-        <p>
-            Implementação de sistemas de gestão da qualidade
-            focados em conformidade e excelência operacional.
-        </p>
-    </div>
+        <!-- CANABIDIOL -->
 
+        <div class="canabidiol-box">
 
-    <div class="servico-card reveal delay-3">
-        <div class="servico-icone">
-            <i data-lucide="folder"></i>
+            <div class="canabidiol-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+
+                <h4>
+                    REGULAMENTAÇÃO<br>
+                    DE CANABIDIOL
+                </h4>
+
+                <p>
+                    Regularização de produtos à base de Canabidiol (CBD)
+                    junto à ANVISA, com foco em conformidade,
+                    documentação e requisitos aplicáveis.
+                </p>
+
+            </div>
+
         </div>
 
-        <h3>ASSUNTOS TÉCNICOS</h3>
-
-        <p>
-            Elaboração, revisão e adequação de documentos
-            técnicos com precisão e agilidade.
-        </p>
     </div>
 
 
-    <div class="servico-card reveal delay-4">
-        <div class="servico-icone">
-            <i data-lucide="users"></i>
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <div class="areas-cta">
+
+        <div class="cta-icon">
+            <i class="fa-regular fa-user"></i>
         </div>
 
-        <h3>TREINAMENTOS</h3>
-
         <p>
-            Capacitação personalizada para times que buscam
-            performance e atualização contínua.
+            Fale com nossos especialistas e encontre o caminho regulatório
+            mais seguro para o seu negócio.
         </p>
+
+        <a href="#contato" class="areas-cta-button">
+            FALE COM A AYKOS
+            <span>→</span>
+        </a>
+
     </div>
+
+</section>
 
 </section>
 

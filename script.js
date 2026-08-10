@@ -220,3 +220,80 @@ const observerDiferenciais = new IntersectionObserver(
 cardsDiferenciais.forEach((card) => {
     observerDiferenciais.observe(card);
 });
+
+
+/* =========================================
+   FADE - SOLUÇÕES COMPLETAS
+========================================= */
+
+const fadeElements = document.querySelectorAll(
+    '.fade-solutions, .fade-solutions-text'
+);
+
+const fadeObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add('show');
+
+                fadeObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+fadeElements.forEach((element) => {
+    fadeObserver.observe(element);
+});
+
+
+
+/* =========================================
+   FADE DA LEGALIZAÇÃO AO ROLAR
+========================================= */
+
+/* =========================================
+   FADE - LEGALIZAÇÃO & REGULARIZAÇÃO
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const legalizacao = document.querySelector(".legalizacao-destaque");
+
+    if (!legalizacao) {
+        console.log("Seção de legalização não encontrada.");
+        return;
+    }
+
+    const observerLegalizacao = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("legalizacao-visivel");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    observerLegalizacao.observe(legalizacao);
+
+});

@@ -955,6 +955,7 @@ nav a:hover {
    CHAMADA PARA CONTATO
 ========================= */
 
+
 .cta-contato {
     width: 100%;
 
@@ -964,10 +965,8 @@ nav a:hover {
 
     padding: 35px 7%;
 
-    background-color: #f8f6f3;
+    background-color: #08263A;
 }
-
-
 /* TÍTULO */
 
 .cta-texto h2 {
@@ -978,7 +977,7 @@ nav a:hover {
 
     line-height: 1.3;
 
-    color: #0b2135;
+    color: #ffffff;
 
     margin-bottom: 12px;
 }
@@ -998,7 +997,7 @@ nav a:hover {
 
     font-size: 13px;
 
-    color: #555;
+    color: rgba(255, 255, 255, 0.75);
 
     margin: 0;
 }
@@ -2678,13 +2677,9 @@ nav a:hover {
 ===================================================== */
 
 .faq {
-    opacity: 0;
-    transform: translateY(35px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+    opacity: 1;
+    transform: translateY(0);
 }
-
 .faq.faq-visivel {
     opacity: 1;
     transform: translateY(0);
@@ -2979,4 +2974,4085 @@ nav a:hover {
 
 .diferencial-item:nth-child(4).aparecer {
     transition-delay: 0.35s;
+}
+
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 82px;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid rgba(20, 40, 60, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-logo img {
+    width: 180px;
+    height: auto;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 38px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    color: #10243b;
+
+    transition: 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #bd8a42;
+}
+
+.navbar nav a.active {
+    color: #10243b;
+}
+
+.navbar nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -12px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #bd8a42;
+}
+
+.nav-button {
+    padding: 13px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #c99a55,
+        #b47d32
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 0.7px;
+
+    border-radius: 2px;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 8px 25px rgba(180, 125, 50, 0.2);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(180, 125, 50, 0.3);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    min-height: calc(100vh - 82px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 65px 5% 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(201, 154, 85, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #faf9f7 65%,
+            #f5f3ef 100%
+        );
+}
+
+
+/* =========================================
+   BRILHO
+========================================= */
+
+.hero-glow {
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(203, 159, 91, 0.10),
+            transparent 65%
+        );
+
+    animation: glowPulse 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   CÍRCULO ANIMADO
+========================================= */
+
+.hero-ring {
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(190, 140, 70, 0.18);
+
+    animation: ringRotate 18s linear infinite;
+
+    pointer-events: none;
+}
+
+.hero-ring::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: #c69750;
+
+    border-radius: 50%;
+
+    top: 50px;
+    left: 80px;
+
+    box-shadow:
+        0 0 15px rgba(198, 151, 80, 0.8);
+}
+
+@keyframes ringRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-animation {
+
+    animation: logoEntrance 1.4s ease forwards;
+
+    opacity: 0;
+
+    transform: translateY(20px) scale(0.94);
+}
+
+.hero-logo {
+
+    width: 330px;
+
+    max-width: 70vw;
+
+    filter:
+        drop-shadow(
+            0 12px 25px rgba(20, 40, 60, 0.08)
+        );
+
+    animation: logoFloat 5s ease-in-out infinite;
+}
+
+@keyframes logoEntrance {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =========================================
+   LINHA DOURADA
+========================================= */
+
+.hero-line {
+
+    width: 90px;
+    height: 2px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background: #c69750;
+
+    position: relative;
+
+    animation: lineAppear 1.2s ease forwards;
+}
+
+.hero-line::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 5px;
+    height: 5px;
+
+    top: -1.5px;
+
+    border-radius: 50%;
+
+    background: #c69750;
+}
+
+@keyframes lineAppear {
+
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 90px;
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   SUBTÍTULO
+========================================= */
+
+.hero-subtitle {
+
+    margin: 0 0 30px;
+
+    color: #10243b;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.hero h1 {
+
+    max-width: 950px;
+
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(
+        38px,
+        5vw,
+        64px
+    );
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    color: #10243b;
+}
+
+.hero h1 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #b9853d;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   DESCRIÇÃO
+========================================= */
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin: 25px 0 30px;
+
+    color: #59616b;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 17px 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c89a55,
+            #b77f35
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(181, 126, 52, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-button span {
+
+    font-size: 22px;
+
+    transition: transform 0.3s ease;
+}
+
+.hero-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(181, 126, 52, 0.32);
+}
+
+.hero-button:hover span {
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   SETA DE SCROLL
+========================================= */
+
+.scroll-indicator {
+
+    margin-top: 25px;
+
+    width: 20px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    animation: scrollBounce 2s infinite;
+}
+
+.scroll-indicator span {
+
+    width: 10px;
+    height: 10px;
+
+    border-right: 2px solid #bd8a42;
+    border-bottom: 2px solid #bd8a42;
+
+    transform: rotate(45deg);
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* =========================================
+   PILARES
+========================================= */
+
+.hero-pillars {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1100px, 95%);
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    border:
+        1px solid rgba(20, 40, 60, 0.08);
+
+    border-radius: 18px 18px 0 0;
+
+    box-shadow:
+        0 -5px 35px rgba(20, 40, 60, 0.04);
+
+    backdrop-filter: blur(10px);
+}
+
+.pillar {
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    border-right:
+        1px solid rgba(20, 40, 60, 0.08);
+}
+
+.pillar:last-child {
+    border-right: none;
+}
+
+.pillar-icon {
+
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(190, 140, 70, 0.5);
+
+    border-radius: 50%;
+
+    color: #b9853d;
+
+    font-size: 20px;
+}
+
+.pillar h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: #10243b;
+}
+
+.pillar p {
+
+    margin: 0;
+
+    color: #69717a;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-logo img {
+        width: 150px;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero-ring {
+        width: 380px;
+        height: 380px;
+    }
+
+    .hero-logo {
+        width: 270px;
+    }
+
+    .hero-pillars {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .pillar:nth-child(2) {
+        border-right: none;
+    }
+
+    .pillar:nth-child(1),
+    .pillar:nth-child(2) {
+        border-bottom:
+            1px solid rgba(20, 40, 60, 0.08);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-button {
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 45px 20px 0;
+    }
+
+    .hero-ring {
+        width: 300px;
+        height: 300px;
+        top: 40px;
+    }
+
+    .hero-logo {
+        width: 230px;
+    }
+
+    .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-pillars {
+        grid-template-columns: 1fr;
+
+        margin-top: 35px;
+    }
+
+    .pillar {
+        border-right: none !important;
+        border-bottom:
+            1px solid rgba(20, 40, 60, 0.08);
+    }
+
+    .pillar:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* AJUSTE DO LOGO PRINCIPAL */
+.hero-logo {
+    width: 270px !important;
+    height: auto;
+    mix-blend-mode: multiply;
+    animation: logoFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   AJUSTE FINAL - HERO CENTRALIZADO
+========================================= */
+
+.hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+}
+
+.hero h1 {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-description {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto 30px;
+    text-align: center;
+}
+
+.hero-button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CORREÇÃO - EXIBIR DIFERENCIAIS */
+.diferencial-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+/* =========================================
+   CORREÇÃO - SEÇÕES VISÍVEIS
+========================================= */
+
+/* Por que escolher a AYKOS */
+.diferencial-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* FAQ */
+.faq {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+
+/* =====================================================
+   AYKOS - ÁREAS DE ATUAÇÃO
+===================================================== */
+
+.areas-atuacao {
+    width: 100%;
+    padding: 110px 7% 90px;
+    background:
+        linear-gradient(
+            135deg,
+            #08243a 0%,
+            #061d30 100%
+        );
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.areas-header {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.areas-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+    color: #c69750;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
+}
+
+.areas-eyebrow::before,
+.areas-eyebrow::after {
+    content: "";
+
+    width: 45px;
+    height: 1px;
+
+    background: #c69750;
+}
+
+
+.areas-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    color: #ffffff;
+}
+
+.areas-header h2 span {
+    display: block;
+
+    color: #c69750;
+
+    font-style: italic;
+}
+
+
+.areas-header p {
+    max-width: 720px;
+
+    margin: 25px auto 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   GRID DOS CARDS
+===================================================== */
+
+.areas-grid {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.area-card {
+    min-height: 500px;
+
+    padding: 38px 30px 32px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(198, 151, 80, 0.45);
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.area-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #c69750;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(198, 151, 80, 0.08),
+            rgba(255, 255, 255, 0.02)
+        );
+}
+
+
+/* =====================================================
+   ÍCONE
+===================================================== */
+
+.area-icon {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c69750;
+
+    border-radius: 50%;
+
+    color: #c69750;
+
+    font-size: 25px;
+}
+
+
+.area-icon i {
+    color: #c69750;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.area-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   LINHA DOURADA
+===================================================== */
+
+.area-line {
+    width: 35px;
+    height: 2px;
+
+    margin: 16px 0 22px;
+
+    background: #c69750;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.area-card p {
+    margin: 0 0 25px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+.area-card ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.area-card li {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    padding-left: 18px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+.area-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #c69750;
+}
+
+
+/* =====================================================
+   DESTAQUE - CANABIDIOL
+===================================================== */
+
+.area-destaque {
+    max-width: 1250px;
+
+    margin: 35px auto 0;
+
+    padding: 24px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border: 1px solid rgba(198, 151, 80, 0.7);
+
+    background:
+        rgba(198, 151, 80, 0.06);
+}
+
+
+.destaque-icon {
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c69750;
+
+    border-radius: 50%;
+
+    color: #c69750;
+
+    font-size: 20px;
+}
+
+
+.destaque-conteudo span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #c69750;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.destaque-conteudo h3 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+}
+
+
+.destaque-conteudo p {
+    margin: 0;
+
+    max-width: 850px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.areas-cta {
+    max-width: 900px;
+
+    margin: 55px auto 0;
+
+    text-align: center;
+}
+
+
+.areas-cta p {
+    margin: 0 0 25px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+}
+
+
+.areas-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #c69750;
+
+    color: #c69750;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+
+.areas-cta-button span {
+    font-size: 20px;
+
+    line-height: 0;
+}
+
+
+.areas-cta-button:hover {
+    background: #c69750;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .areas-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .areas-atuacao {
+        padding: 75px 6% 65px;
+    }
+
+
+    .areas-header {
+        margin-bottom: 45px;
+    }
+
+
+    .areas-header h2 {
+        font-size: 36px;
+    }
+
+
+    .areas-header p {
+        font-size: 14px;
+    }
+
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .area-card {
+        min-height: auto;
+
+        padding: 30px 25px;
+    }
+
+
+    .area-destaque {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+
+    .areas-cta {
+        margin-top: 40px;
+    }
+
+}
+
+/* =====================================================
+   AYKOS — ÁREAS DE ATUAÇÃO | REFINAMENTO
+===================================================== */
+
+.areas-atuacao {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 75px 6% 70px;
+
+    background: linear-gradient(
+        135deg,
+        #08263b 0%,
+        #061d30 100%
+    );
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.areas-header {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.areas-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 15px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.areas-eyebrow::before,
+.areas-eyebrow::after {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background: #c9974f;
+}
+
+
+.areas-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    color: #fff;
+}
+
+.areas-header h2 span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #c9974f;
+
+    font-style: italic;
+}
+
+
+.areas-header p {
+    max-width: 700px;
+
+    margin: 18px auto 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.areas-grid {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.area-card {
+    min-height: 420px;
+
+    padding: 30px 25px 27px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(201, 151, 79, 0.55);
+
+    border-radius: 2px;
+
+    background: rgba(255, 255, 255, 0.018);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.area-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c9974f;
+
+    background: rgba(201, 151, 79, 0.055);
+}
+
+
+/* =====================================================
+   ÍCONES
+===================================================== */
+
+.area-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+
+    font-size: 20px;
+}
+
+
+.area-icon i {
+    color: #c9974f;
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.area-card h3 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.3px;
+}
+
+
+.area-line {
+    width: 32px;
+    height: 2px;
+
+    margin: 13px 0 18px;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   DESCRIÇÃO
+===================================================== */
+
+.area-card p {
+    margin: 0 0 20px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   LISTA
+===================================================== */
+
+.area-card ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.area-card li {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    padding-left: 15px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.area-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   DESTAQUE — CANABIDIOL
+===================================================== */
+
+.area-destaque {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 25px auto 0;
+
+    padding: 20px 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border: 1px solid rgba(201, 151, 79, 0.65);
+
+    background: rgba(201, 151, 79, 0.045);
+}
+
+
+.destaque-icon {
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+
+    font-size: 18px;
+}
+
+
+.destaque-conteudo span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.destaque-conteudo h3 {
+    margin: 0 0 5px;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+}
+
+
+.destaque-conteudo p {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.areas-cta {
+    max-width: 800px;
+
+    margin: 35px auto 0;
+
+    text-align: center;
+}
+
+
+.areas-cta p {
+    margin: 0 0 18px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+.areas-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 13px 27px;
+
+    border: 1px solid #c9974f;
+
+    color: #c9974f;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+
+.areas-cta-button span {
+    font-size: 18px;
+}
+
+
+.areas-cta-button:hover {
+    background: #c9974f;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   RESPONSIVO — TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .area-card {
+        min-height: 390px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVO — CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .areas-atuacao {
+        padding: 60px 6% 55px;
+    }
+
+    .areas-header {
+        margin-bottom: 38px;
+    }
+
+    .areas-header h2 {
+        font-size: 34px;
+    }
+
+    .areas-header p {
+        font-size: 13px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .area-card {
+        min-height: auto;
+        padding: 27px 23px;
+    }
+
+    .area-destaque {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+    }
+
+    .areas-cta {
+        margin-top: 30px;
+    }
+
+}
+
+/* =====================================================
+   AJUSTE FINAL — ÁREAS DE ATUAÇÃO
+===================================================== */
+
+.areas-atuacao {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.areas-header {
+    margin-bottom: 40px;
+}
+
+.areas-header h2 {
+    font-size: clamp(32px, 3.5vw, 46px);
+}
+
+.areas-header p {
+    max-width: 760px;
+    margin-top: 15px;
+}
+
+.areas-grid {
+    max-width: 1180px;
+    gap: 16px;
+}
+
+.area-card {
+    min-height: 390px;
+    padding: 27px 24px 25px;
+}
+
+.area-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 19px;
+    font-size: 18px;
+}
+
+.area-card h3 {
+    font-size: 21px;
+}
+
+.area-line {
+    margin: 11px 0 17px;
+}
+
+.area-card p {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 17px;
+}
+
+.area-card li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+/* Destaque de Canabidiol mais elegante */
+.area-destaque {
+    margin-top: 20px;
+    padding: 18px 24px;
+}
+
+.destaque-conteudo h3 {
+    font-size: 20px;
+}
+
+.destaque-conteudo p {
+    font-size: 12px;
+}
+
+/* CTA mais próximo dos serviços */
+.areas-cta {
+    margin-top: 28px;
+}
+
+
+/* Destaque para regulamentação de Canabidiol */
+
+.area-subtitle {
+    margin: 18px 0 10px;
+
+    color: #c9974f;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.area-special {
+    margin-top: 18px;
+    padding: 13px 14px;
+
+    border: 1px solid rgba(201, 151, 79, 0.7);
+
+    background: rgba(201, 151, 79, 0.04);
+}
+
+.area-special strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #c9974f;
+
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.area-special p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   AYKOS — NOVO DESIGN DA ÁREA DE ATUAÇÃO
+===================================================== */
+
+.areas-atuacao {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 80px 5% 75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061d30 0%,
+            #08283e 50%,
+            #061d30 100%
+        );
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.areas-header {
+    max-width: 900px;
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.areas-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 14px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.areas-eyebrow::before,
+.areas-eyebrow::after {
+    content: "";
+
+    width: 38px;
+    height: 1px;
+
+    background: #c9974f;
+}
+
+
+.areas-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(36px, 4vw, 52px);
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+    color: #fff;
+}
+
+.areas-header h2 span {
+    display: block;
+
+    color: #c9974f;
+
+    font-style: italic;
+}
+
+
+.areas-header p {
+    max-width: 760px;
+
+    margin: 20px auto 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.areas-grid {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.area-card {
+    position: relative;
+
+    box-sizing: border-box;
+
+    min-height: 560px;
+
+    padding: 32px 27px;
+
+    border: 1px solid rgba(201,151,79,.42);
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.012)
+        );
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+}
+
+
+.area-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(201,151,79,.85);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(201,151,79,.08),
+            rgba(255,255,255,.02)
+        );
+}
+
+
+/* =====================================================
+   CARD DE LEGALIZAÇÃO — DESTAQUE
+===================================================== */
+
+.area-card:nth-child(2) {
+    border-color: rgba(201,151,79,.75);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(201,151,79,.075),
+            rgba(255,255,255,.018)
+        );
+}
+
+
+/* =====================================================
+   ÍCONE
+===================================================== */
+
+.area-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+
+    font-size: 19px;
+}
+
+.area-icon i {
+    color: #c9974f;
+}
+
+
+/* =====================================================
+   TÍTULO DO CARD
+===================================================== */
+
+.area-card h3 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    letter-spacing: .3px;
+}
+
+
+/* =====================================================
+   LINHA DOURADA
+===================================================== */
+
+.area-line {
+    width: 34px;
+    height: 2px;
+
+    margin: 13px 0 20px;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   DESCRIÇÃO
+===================================================== */
+
+.area-card > p {
+    margin: 0 0 22px;
+
+    color: rgba(255,255,255,.76);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   LISTAS
+===================================================== */
+
+.area-card ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.area-card li {
+    position: relative;
+
+    margin-bottom: 13px;
+
+    padding-left: 15px;
+
+    color: rgba(255,255,255,.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.area-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   SUBTÍTULO DA LEGALIZAÇÃO
+===================================================== */
+
+.area-subtitle {
+    margin: 18px 0 12px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(201,151,79,.28);
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    letter-spacing: .4px;
+}
+
+
+/* =====================================================
+   LISTA DA LEGALIZAÇÃO
+   MAIS COMPACTA
+===================================================== */
+
+.area-card:nth-child(2) ul {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+
+    row-gap: 2px;
+}
+
+.area-card:nth-child(2) li {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+}
+
+
+/* =====================================================
+   DESTAQUE CANABIDIOL
+===================================================== */
+
+.area-special {
+    margin-top: 18px;
+
+    padding: 14px 15px;
+
+    border: 1px solid rgba(201,151,79,.7);
+
+    border-radius: 3px;
+
+    background:
+        rgba(201,151,79,.055);
+}
+
+.area-special strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .8px;
+}
+
+.area-special p {
+    margin: 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.areas-cta {
+    max-width: 850px;
+
+    margin: 35px auto 0;
+
+    text-align: center;
+}
+
+.areas-cta p {
+    margin: 0 0 18px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 13px;
+}
+
+.areas-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 13px 30px;
+
+    border: 1px solid #c9974f;
+
+    color: #c9974f;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    transition: all .3s ease;
+}
+
+.areas-cta-button:hover {
+    background: #c9974f;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .areas-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .area-card {
+        min-height: auto;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .areas-atuacao {
+        padding: 65px 6% 55px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        min-height: auto;
+
+        padding: 28px 24px;
+    }
+
+    .area-card:nth-child(2) ul {
+        grid-template-columns: 1fr;
+    }
+
+    .areas-header h2 {
+        font-size: 34px;
+    }
+
+}
+
+/* =====================================================
+   CTA — FALE COM A AYKOS
+===================================================== */
+
+.areas-cta {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 25px auto 0;
+
+    padding: 24px 30px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+
+    border: 1px solid rgba(201, 151, 79, 0.45);
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+.areas-cta p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.areas-cta-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    padding: 12px 25px;
+
+    border: 1px solid #c9974f;
+
+    color: #c9974f;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+
+.areas-cta-button span {
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+.areas-cta-button:hover {
+    background: #c9974f;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .areas-cta {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 25px 20px;
+
+        text-align: center;
+    }
+
+}
+
+/* =====================================================
+   COMPACTAR TODA A SEÇÃO DE ATUAÇÃO
+===================================================== */
+
+.areas-atuacao {
+    padding-top: 55px;
+    padding-bottom: 40px;
+}
+
+
+/* Cabeçalho menor */
+
+.areas-header {
+    margin-bottom: 32px;
+}
+
+.areas-header h2 {
+    font-size: clamp(32px, 3.5vw, 44px);
+}
+
+.areas-header p {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+
+/* Cards mais compactos */
+
+.areas-grid {
+    gap: 14px;
+}
+
+.area-card {
+    min-height: 0;
+
+    padding: 24px 22px;
+
+    height: auto;
+}
+
+
+/* Ícones menores */
+
+.area-icon {
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 16px;
+
+    font-size: 17px;
+}
+
+
+/* Títulos */
+
+.area-card h3 {
+    font-size: 20px;
+}
+
+.area-line {
+    margin: 9px 0 15px;
+}
+
+
+/* Textos */
+
+.area-card > p {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* Listas */
+
+.area-card li {
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* Legalização */
+
+.area-subtitle {
+    margin-top: 14px;
+    padding-top: 12px;
+
+    font-size: 9px;
+}
+
+.area-card:nth-child(2) li {
+    margin-bottom: 5px;
+
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+/* Canabidiol */
+
+.area-special {
+    margin-top: 12px;
+
+    padding: 11px 12px;
+}
+
+.area-special strong {
+    font-size: 9px;
+}
+
+.area-special p {
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* CTA */
+
+.areas-cta {
+    margin-top: 18px;
+
+    padding: 18px 25px;
+}
+
+.areas-cta p {
+    font-size: 12px;
+}
+
+.areas-cta-button {
+    padding: 10px 22px;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   TELAS MENORES
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .areas-atuacao {
+        padding: 50px 6% 40px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        padding: 25px 22px;
+    }
+
+    .area-card:nth-child(2) ul {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   ÁREA DE ATUAÇÃO — AYKOS
+===================================================== */
+
+.areas-atuacao {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 75px 5% 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061d30 0%,
+            #08283e 50%,
+            #061d30 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.areas-header {
+    max-width: 900px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.areas-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 13px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+.areas-eyebrow::before,
+.areas-eyebrow::after {
+    content: "";
+
+    width: 38px;
+
+    height: 1px;
+
+    background: #c9974f;
+}
+
+
+.areas-header h2 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(36px, 4vw, 52px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    color: #ffffff;
+}
+
+
+.areas-header h2 span {
+    display: block;
+
+    color: #c9974f;
+
+    font-style: italic;
+}
+
+
+.areas-header p {
+    max-width: 760px;
+
+    margin: 18px auto 0;
+
+    color: rgba(255,255,255,.75);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   GRID DOS 4 CARDS
+===================================================== */
+
+.areas-grid {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.area-card {
+    box-sizing: border-box;
+
+    padding: 26px 24px;
+
+    border: 1px solid rgba(201,151,79,.48);
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.012)
+        );
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+
+.area-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #c9974f;
+}
+
+
+/* Destaque discreto */
+
+.area-card:nth-child(2) {
+    border-color: rgba(201,151,79,.75);
+}
+
+
+/* =====================================================
+   ÍCONE
+===================================================== */
+
+.area-icon {
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+
+    font-size: 18px;
+}
+
+
+.area-icon i {
+    color: #c9974f;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.area-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+}
+
+
+.area-line {
+    width: 34px;
+
+    height: 2px;
+
+    margin: 11px 0 17px;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.area-card > p {
+    margin: 0 0 20px;
+
+    color: rgba(255,255,255,.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   LISTAS
+===================================================== */
+
+.area-card ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.area-card li {
+    position: relative;
+
+    margin-bottom: 10px;
+
+    padding-left: 15px;
+
+    color: rgba(255,255,255,.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+.area-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 7px;
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #c9974f;
+}
+
+
+/* =====================================================
+   SEGUNDO NÍVEL
+===================================================== */
+
+/* =====================================================
+   TÍTULO LEGALIZAÇÃO
+===================================================== */
+
+.legalizacao-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(201,151,79,.3);
+}
+
+
+.legalizacao-title .area-icon {
+    flex-shrink: 0;
+
+    margin: 0;
+}
+
+
+.legalizacao-title h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+.legalizacao-title p {
+    margin: 0;
+
+    color: rgba(255,255,255,.7);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   ÓRGÃOS
+===================================================== */
+
+.orgaos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 0;
+
+    margin-top: 17px;
+}
+
+
+.orgaos-grid span {
+    padding: 8px 12px;
+
+    border-right: 1px solid rgba(201,151,79,.18);
+
+    color: rgba(255,255,255,.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+}
+
+
+.orgaos-grid span::before {
+    content: "•";
+
+    margin-right: 7px;
+
+    color: #c9974f;
+}
+
+
+.outros-orgaos {
+    margin-top: 10px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,.55);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   CANABIDIOL
+===================================================== */
+
+.canabidiol-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(201,151,79,.7);
+
+    background:
+        rgba(201,151,79,.045);
+}
+
+
+.canabidiol-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+
+    font-size: 19px;
+}
+
+
+.canabidiol-box h4 {
+    margin: 0 0 9px;
+
+    color: #c9974f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    line-height: 1.45;
+}
+
+
+.canabidiol-box p {
+    margin: 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.areas-cta {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 16px auto 0;
+
+    padding: 18px 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    border: 1px solid rgba(201,151,79,.35);
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+
+.cta-icon {
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #c9974f;
+
+    border-radius: 50%;
+
+    color: #c9974f;
+}
+
+
+.areas-cta p {
+    margin: 0;
+
+    color: rgba(255,255,255,.78);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.areas-cta-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 11px 24px;
+
+    border: 1px solid #c9974f;
+
+    color: #c9974f;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    transition: all .3s ease;
+}
+
+
+.areas-cta-button span {
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+.areas-cta-button:hover {
+    background: #c9974f;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .areas-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .legalizacao-detalhes {
+        grid-template-columns: 1fr;
+    }
+
+    .orgaos-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .areas-atuacao {
+        padding: 55px 6% 40px;
+    }
+
+    .areas-header {
+        margin-bottom: 30px;
+    }
+
+    .areas-header h2 {
+        font-size: 34px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card {
+        padding: 25px 22px;
+    }
+
+    .legalizacao-detalhes {
+        padding: 20px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .legalizacao-title {
+        align-items: flex-start;
+    }
+
+    .orgaos-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .areas-cta {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 15px;
+    }
+
+}
+
+/* =====================================================
+   BLOCO LEGALIZAÇÃO & REGULARIZAÇÃO
+   VERSÃO CORRIGIDA
+===================================================== */
+
+.areas-atuacao .legalizacao-detalhes {
+    width: 100% !important;
+    max-width: 1250px !important;
+
+    margin: 18px auto 0 !important;
+    padding: 24px 26px !important;
+
+    box-sizing: border-box !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 320px !important;
+
+    gap: 30px !important;
+
+    border: 1px solid rgba(201, 151, 79, 0.45) !important;
+
+    background: rgba(255, 255, 255, 0.025) !important;
+}
+
+
+/* =====================================================
+   PARTE ESQUERDA
+===================================================== */
+
+.areas-atuacao .legalizacao-info {
+    min-width: 0 !important;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.areas-atuacao .legalizacao-title {
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 18px !important;
+
+    padding-bottom: 17px !important;
+
+    border-bottom: 1px solid rgba(201, 151, 79, 0.28) !important;
+}
+
+
+.areas-atuacao .legalizacao-title .area-icon {
+    flex: 0 0 52px !important;
+
+    width: 52px !important;
+    height: 52px !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 1px solid #c9974f !important;
+
+    border-radius: 50% !important;
+
+    color: #c9974f !important;
+}
+
+
+.areas-atuacao .legalizacao-title h3 {
+    margin: 0 0 5px !important;
+
+    color: #ffffff !important;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif !important;
+
+    font-size: 21px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.2 !important;
+}
+
+
+.areas-atuacao .legalizacao-title p {
+    margin: 0 !important;
+
+    color: rgba(255, 255, 255, 0.68) !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =====================================================
+   LISTA DE ÓRGÃOS
+===================================================== */
+
+.areas-atuacao .orgaos-grid {
+    width: 100% !important;
+
+    margin-top: 16px !important;
+
+    padding: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 0 !important;
+}
+
+
+.areas-atuacao .orgaos-grid span {
+    display: block !important;
+
+    box-sizing: border-box !important;
+
+    padding: 9px 12px !important;
+
+    border: none !important;
+
+    color: rgba(255, 255, 255, 0.76) !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.4 !important;
+}
+
+
+.areas-atuacao .orgaos-grid span::before {
+    content: "•" !important;
+
+    margin-right: 7px !important;
+
+    color: #c9974f !important;
+}
+
+
+/* =====================================================
+   OUTROS ÓRGÃOS
+===================================================== */
+
+.areas-atuacao .outros-orgaos {
+    margin-top: 8px !important;
+
+    text-align: center !important;
+
+    color: rgba(255, 255, 255, 0.48) !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 10px !important;
+}
+
+
+/* =====================================================
+   CANABIDIOL
+===================================================== */
+
+.areas-atuacao .canabidiol-box {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    align-self: center !important;
+
+    display: flex !important;
+
+    align-items: flex-start !important;
+
+    gap: 15px !important;
+
+    padding: 19px !important;
+
+    border: 1px solid rgba(201, 151, 79, 0.7) !important;
+
+    background: rgba(201, 151, 79, 0.045) !important;
+}
+
+
+.areas-atuacao .canabidiol-icon {
+    flex: 0 0 46px !important;
+
+    width: 46px !important;
+    height: 46px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 1px solid #c9974f !important;
+
+    border-radius: 50% !important;
+
+    color: #c9974f !important;
+
+    font-size: 18px !important;
+}
+
+
+.areas-atuacao .canabidiol-box h4 {
+    margin: 0 0 8px !important;
+
+    color: #c9974f !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 10px !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: 1px !important;
+
+    line-height: 1.45 !important;
+}
+
+
+.areas-atuacao .canabidiol-box p {
+    margin: 0 !important;
+
+    color: rgba(255, 255, 255, 0.72) !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.55 !important;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .areas-atuacao .legalizacao-detalhes {
+        grid-template-columns: 1fr !important;
+    }
+
+    .areas-atuacao .orgaos-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .areas-atuacao .legalizacao-detalhes {
+        padding: 20px !important;
+    }
+
+    .areas-atuacao .orgaos-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .areas-atuacao .legalizacao-title {
+        align-items: flex-start !important;
+    }
+
+}
+
+
+   FADE - SEÇÃO SOLUÇÕES
+========================================= */
+
+.areas-atuacao h2 {
+    animation: solutionsFadeUp 1s ease-out both;
+}
+
+.areas-atuacao > p {
+    animation: solutionsFadeUp 1s ease-out 0.25s both;
+}
+
+
+/* =========================================
+   ANIMAÇÃO
+========================================= */
+
+@keyframes solutionsFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* =========================================
+   SUBTÍTULO DO HERO
+========================================= */
+
+.hero .subtitulo-fade {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 850px !important;
+
+    margin: 32px auto 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+
+    color: #0b2135 !important;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    animation: subtituloAparecer 3s ease-out 1.8s forwards !important;
+}
+
+
+/* =========================================
+   FADE
+========================================= */
+
+@keyframes subtituloAparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* TÍTULO */
+
+@keyframes entradaTituloAykos {
+
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes entradaSubtituloAykos {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* =========================================
+   FADE - HERO / INÍCIO
+========================================= */
+
+.hero-content h1 {
+    opacity: 0;
+    animation: heroTitulo 2.5s ease-out forwards;
+}
+
+.hero-content p {
+    opacity: 0;
+    animation: heroTexto 2.2s ease-out 0.5s forwards;
+}
+
+.hero-content .hero-button {
+    opacity: 0;
+    animation: heroBotao 2s ease-out 1s forwards;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+@keyframes heroTitulo {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+@keyframes heroTexto {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+@keyframes heroBotao {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* TESTE FADE DO INÍCIO */
+
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInicio 3s ease forwards !important;
+}
+
+@keyframes fadeInicio {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   FADE ELEGANTE - SEÇÃO INÍCIO
+========================================= */
+
+/* Conteúdo inteiro começa suavemente */
+.hero-content {
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: heroFade 2.8s ease-out forwards;
+}
+
+
+/* Linha decorativa */
+.hero-line {
+    opacity: 0;
+
+    animation: heroElementFade 1.8s ease-out 0.3s forwards;
+}
+
+
+/* Título */
+.hero-content h1 {
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: heroElementFade 2.2s ease-out 0.5s forwards;
+}
+
+
+/* Texto */
+.hero-content p {
+    opacity: 0;
+    transform: translateY(20px);
+
+    animation: heroElementFade 2.2s ease-out 1s forwards;
+}
+
+
+/* Botão */
+.hero-content a,
+.hero-content button {
+    opacity: 0;
+    transform: translateY(15px);
+
+    animation: heroElementFade 2s ease-out 1.5s forwards;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes heroFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heroElementFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   FADE LENTO - TÍTULO PRINCIPAL
+========================================= */
+
+.hero-content h1 {
+    opacity: 0;
+    transform: translateY(30px);
+
+    animation: tituloFade 3s ease-out 0.2s forwards;
+}
+
+
+/* Parte dourada do título */
+.hero-content h1 span {
+    opacity: 0;
+    transform: translateY(20px);
+
+    animation: tituloSpanFade 3s ease-out 0.7s forwards;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes tituloFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes tituloSpanFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* =========================================
+   FADE DO TÍTULO PRINCIPAL
+========================================= */
+
+.hero .titulo-fade {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: tituloPrincipalFade 4s ease-out 0.3s forwards;
+}
+
+
+/* Parte dourada */
+.hero .titulo-fade span {
+    opacity: 0;
+    animation: tituloDouradoFade 3s ease-out 0.8s forwards;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes tituloPrincipalFade {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes tituloDouradoFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* =========================================
+   FADE DOMINÓ - CARDS ÁREA DE ATUAÇÃO
+========================================= */
+
+.areas-grid .area-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: aykosCardFade 1.8s ease-out forwards;
+}
+
+/* CARD 1 */
+.areas-grid .area-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+/* CARD 2 */
+.areas-grid .area-card:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+/* CARD 3 */
+.areas-grid .area-card:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* CARD 4 */
+.areas-grid .area-card:nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes aykosCardFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   ANIMAÇÃO
+========================================= */
+
+@keyframes aykosCardFade {
+
+    from {
+        opacity: 1;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   LEGALIZAÇÃO & REGULARIZAÇÃO
+   ENTRADA AO ROLAR A PÁGINA
+========================================= */
+/* =========================================
+   FADE - LEGALIZAÇÃO & REGULARIZAÇÃO
+========================================= */
+
+.legalizacao-destaque {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.legalizacao-destaque.legalizacao-visivel {
+    opacity: 1;
+    transform: translateX(0);
+
+    transition:
+        opacity 2.5s ease,
+        transform 2.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
