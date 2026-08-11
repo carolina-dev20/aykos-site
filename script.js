@@ -1,288 +1,388 @@
-lucide.createIcons();
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================================
+       ÍCONES LUCIDE
+    ========================================= */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
 
 
-const elementosReveal = document.querySelectorAll('.reveal');
+    /* =========================================
+       FADE GLOBAL AO ROLAR
+    ========================================= */
 
-const observer = new IntersectionObserver((entries) => {
+    const elementosReveal = document.querySelectorAll(".reveal");
 
-    entries.forEach((entry) => {
+    const observerReveal = new IntersectionObserver(
+        (entries, observer) => {
 
-        if (entry.isIntersecting) {
+            entries.forEach((entry) => {
 
-            entry.target.classList.add('ativo');
+                if (entry.isIntersecting) {
 
-            observer.unobserve(entry.target);
+                    entry.target.classList.add("ativo");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
         }
+    );
 
+
+    elementosReveal.forEach((elemento) => {
+        observerReveal.observe(elemento);
     });
 
-}, {
-    threshold: 0.15
-});
 
 
-elementosReveal.forEach((elemento) => {
-    observer.observe(elemento);
-});
+    /* =========================================
+       FADE LATERAL
+       SOBRE A AYKOS
+    ========================================= */
 
-const elementosLaterais = document.querySelectorAll(
-    '.fade-esquerda, .fade-direita'
-);
+    const elementosLaterais = document.querySelectorAll(
+        ".fade-esquerda, .fade-direita"
+    );
 
-const observerLaterais = new IntersectionObserver((entries) => {
+    const observerLateral = new IntersectionObserver(
+        (entries, observer) => {
 
-    entries.forEach((entry) => {
+            entries.forEach((entry) => {
 
-        if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-            entry.target.classList.add('ativo');
+                    entry.target.classList.add("ativo");
 
-            observerLaterais.unobserve(entry.target);
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.20
         }
+    );
 
+
+    elementosLaterais.forEach((elemento) => {
+        observerLateral.observe(elemento);
     });
 
-}, {
-    threshold: 0.2
-});
 
 
-elementosLaterais.forEach((elemento) => {
-    observerLaterais.observe(elemento);
-});
+    /* =========================================
+       SOLUÇÕES COMPLETAS
+    ========================================= */
+
+    const elementosSolucoes = document.querySelectorAll(
+        ".fade-solutions, .fade-solutions-text"
+    );
+
+    const observerSolucoes = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.20
+        }
+    );
+
+
+    elementosSolucoes.forEach((elemento) => {
+        observerSolucoes.observe(elemento);
+    });
 
 
 
+    /* =========================================
+       CARDS DA ÁREA DE ATUAÇÃO
+       EFEITO DOMINÓ
+    ========================================= */
 
-/* =========================================
-   FADE AO ROLAR A PÁGINA
-========================================= */
+    const areaCards = document.querySelectorAll(
+        ".areas-grid .area-card"
+    );
 
-const elementosFade = document.querySelectorAll(
-    ".fade-esquerda, .fade-direita"
-);
 
-const observadorFade = new IntersectionObserver(
-    (entradas) => {
+    /*
+       Ativa o sistema somente depois
+       que o observer foi criado.
+    */
 
-        entradas.forEach((entrada) => {
+    if (areaCards.length > 0) {
 
-            if (entrada.isIntersecting) {
+        document.documentElement.classList.add("js-enabled");
 
-                entrada.target.classList.add("ativo");
 
-                // anima somente uma vez
-                observadorFade.unobserve(entrada.target);
+        const observerCards = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("card-visible");
+
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
             }
+        );
 
+
+        areaCards.forEach((card) => {
+            observerCards.observe(card);
         });
 
-    },
-    {
-        threshold: 0.20
     }
-);
-
-elementosFade.forEach((elemento) => {
-    observadorFade.observe(elemento);
-});
 
 
-/* =========================
-   MENU MOBILE
-========================= */
 
-const botaoMenu = document.getElementById("menu-mobile");
-const menuOverlay = document.getElementById("menu-overlay");
-const fecharMenu = document.getElementById("fechar-menu");
+    /* =========================================
+       LEGALIZAÇÃO & REGULARIZAÇÃO
+       ENTRADA PELA ESQUERDA
+    ========================================= */
 
-botaoMenu.addEventListener("click", () => {
-    menuOverlay.classList.add("ativo");
-    document.body.style.overflow = "hidden";
-});
-
-fecharMenu.addEventListener("click", () => {
-    menuOverlay.classList.remove("ativo");
-    document.body.style.overflow = "";
-});
+    const legalizacao = document.querySelector(
+       ".legalizacao-detalhes"
+    );
 
 
-/* fecha ao clicar em um link */
+    if (legalizacao) {
 
-document.querySelectorAll(".menu-mobile-links a").forEach(link => {
+        const observerLegalizacao = new IntersectionObserver(
+            (entries, observer) => {
 
-    link.addEventListener("click", () => {
+                entries.forEach((entry) => {
 
-        menuOverlay.classList.remove("ativo");
+                    if (entry.isIntersecting) {
 
-        document.body.style.overflow = "";
+                        entry.target.classList.add(
+                            "legalizacao-visivel"
+                        );
 
-    });
+                        observer.unobserve(entry.target);
+                    }
 
-});
+                });
 
-/* ========================================
-   MENU MOBILE
-======================================== */
+            },
+            {
+                threshold: 0.15
+            }
+        );
 
-document.addEventListener("DOMContentLoaded", function () {
+
+        observerLegalizacao.observe(legalizacao);
+
+    }
+
+
+
+    /* =========================================
+       DIFERENCIAIS
+    ========================================= */
+
+    const cardsDiferenciais = document.querySelectorAll(
+        ".diferencial-item"
+    );
+
+
+    if (cardsDiferenciais.length > 0) {
+
+        const observerDiferenciais = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("aparecer");
+
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.20
+            }
+        );
+
+
+        cardsDiferenciais.forEach((card) => {
+            observerDiferenciais.observe(card);
+        });
+
+    }
+
+
+
+    /* =========================================
+       FAQ
+    ========================================= */
+
+    const faq = document.querySelector(".faq");
+
+
+    if (faq) {
+
+        const observerFaq = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "faq-visivel"
+                        );
+
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+        observerFaq.observe(faq);
+
+    }
+
+
+
+    /* =========================================
+       MENU MOBILE
+    ========================================= */
 
     const botaoMenu = document.getElementById("menu-mobile");
     const menuOverlay = document.getElementById("menu-overlay");
     const fecharMenu = document.getElementById("fechar-menu");
 
-    botaoMenu.addEventListener("click", function () {
+
+    function abrirMenu() {
+
+        if (!menuOverlay) return;
+
         menuOverlay.classList.add("ativo");
+
         document.body.style.overflow = "hidden";
-    });
-
-    fecharMenu.addEventListener("click", function () {
-        menuOverlay.classList.remove("ativo");
-        document.body.style.overflow = "";
-    });
-
-    const links = document.querySelectorAll(".menu-mobile-links a");
-
-    links.forEach(function (link) {
-        link.addEventListener("click", function () {
-            menuOverlay.classList.remove("ativo");
-            document.body.style.overflow = "";
-        });
-    });
-
-});
+    }
 
 
-/* Fecha o menu ao clicar em um link */
+    function fecharMenuMobile() {
 
-document.querySelectorAll(".menu-mobile-links a").forEach(function(link) {
-
-    link.addEventListener("click", function () {
+        if (!menuOverlay) return;
 
         menuOverlay.classList.remove("ativo");
 
         document.body.style.overflow = "";
+    }
+
+
+    if (botaoMenu) {
+
+        botaoMenu.addEventListener(
+            "click",
+            abrirMenu
+        );
+
+    }
+
+
+    if (fecharMenu) {
+
+        fecharMenu.addEventListener(
+            "click",
+            fecharMenuMobile
+        );
+
+    }
+
+
+    /* Fecha ao clicar em qualquer link */
+
+    const linksMenu = document.querySelectorAll(
+        ".menu-mobile-links a"
+    );
+
+
+    linksMenu.forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            fecharMenuMobile
+        );
 
     });
 
-});
 
 
-/* ==========================================
-   FADE FAQ AO ENTRAR NA TELA
-========================================== */
+    /* =========================================
+       FECHAR MENU COM ESC
+    ========================================= */
 
-const faq = document.querySelector(".faq");
+    document.addEventListener(
+        "keydown",
+        (event) => {
 
-if (faq) {
-    const faqObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("faq-visivel");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.15
+            if (event.key === "Escape") {
+
+                fecharMenuMobile();
+
+            }
+
         }
     );
 
-    faqObserver.observe(faq);
-}
-
-/* =========================================
-   ANIMAÇÃO DOS DIFERENCIAIS
-========================================= */
-
-const cardsDiferenciais = document.querySelectorAll(".diferencial-item");
-
-const observerDiferenciais = new IntersectionObserver(
-    (entries, observer) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("aparecer");
-
-                observer.unobserve(entry.target);
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.20
-    }
-);
-
-cardsDiferenciais.forEach((card) => {
-    observerDiferenciais.observe(card);
-});
-
-
-/* =========================================
-   FADE - SOLUÇÕES COMPLETAS
-========================================= */
-
-const fadeElements = document.querySelectorAll(
-    '.fade-solutions, .fade-solutions-text'
-);
-
-const fadeObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add('show');
-
-                fadeObserver.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.2
-    }
-);
-
-fadeElements.forEach((element) => {
-    fadeObserver.observe(element);
 });
 
 
 
-/* =========================================
-   FADE DA LEGALIZAÇÃO AO ROLAR
-========================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-/* =========================================
-   FADE - LEGALIZAÇÃO & REGULARIZAÇÃO
-========================================= */
+    const elementos = document.querySelectorAll(".fade-left, .fade-right");
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const legalizacao = document.querySelector(".legalizacao-destaque");
-
-    if (!legalizacao) {
-        console.log("Seção de legalização não encontrada.");
-        return;
-    }
-
-    const observerLegalizacao = new IntersectionObserver(
+    const observer = new IntersectionObserver(
         (entries, observer) => {
 
             entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("legalizacao-visivel");
+                    entry.target.classList.add("show");
 
+                    // Para a animação não ficar repetindo
                     observer.unobserve(entry.target);
                 }
 
@@ -290,10 +390,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
         {
-            threshold: 0.15
+            threshold: 0.2
         }
     );
 
-    observerLegalizacao.observe(legalizacao);
+    elementos.forEach((elemento) => {
+        observer.observe(elemento);
+    });
 
 });
