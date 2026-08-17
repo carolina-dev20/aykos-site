@@ -399,3 +399,146 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+/* ==================================================
+   FORMULÁRIO DE SOLICITAÇÃO DE CONSULTORIA — AYKOS
+================================================== */
+
+const formConsultoria = document.getElementById("formConsultoria");
+
+const statusConsultoria = document.getElementById("consultoria-status");
+
+const botaoConsultoria = document.querySelector(
+    ".consultoria-button"
+);
+
+
+if (formConsultoria) {
+
+    formConsultoria.addEventListener("submit", function(event) {
+
+        // Impede o navegador de recarregar a página
+        event.preventDefault();
+
+
+        // Verifica se a biblioteca EmailJS foi carregada
+        if (typeof emailjs === "undefined") {
+
+            console.error("EmailJS não foi carregado.");
+
+            statusConsultoria.className =
+                "consultoria-status erro";
+
+            statusConsultoria.textContent =
+                "Erro de conexão. Atualize a página e tente novamente.";
+
+            return;
+        }
+
+
+        // Muda o botão enquanto envia
+        botaoConsultoria.disabled = true;
+
+        botaoConsultoria.innerHTML = `
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            ENVIANDO...
+        `;
+
+
+        // Mensagem temporária
+        statusConsultoria.className =
+            "consultoria-status";
+
+        statusConsultoria.textContent =
+            "Enviando sua solicitação...";
+
+
+        // ==================================================
+        // ENVIO PARA EMAILJS
+        // ==================================================
+
+        emailjs.sendForm(
+
+            "service_hgejycb",
+
+            "template_utep8ab",
+
+            formConsultoria
+
+        )
+
+
+        // ==================================================
+        // SUCESSO
+        // ==================================================
+
+        .then(function(response) {
+
+            console.log(
+                "Solicitação enviada:",
+                response.status,
+                response.text
+            );
+
+
+            statusConsultoria.className =
+                "consultoria-status sucesso";
+
+            statusConsultoria.innerHTML = `
+                ✓ Solicitação enviada com sucesso!
+                <br>
+                Nossa equipe analisará suas informações
+                e entrará em contato em breve.
+            `;
+
+
+            // Limpa os campos
+            formConsultoria.reset();
+
+
+            // Restaura o botão
+            botaoConsultoria.disabled = false;
+
+            botaoConsultoria.innerHTML = `
+                <i class="fa-regular fa-paper-plane"></i>
+                ENVIAR SOLICITAÇÃO
+            `;
+
+        })
+
+
+        // ==================================================
+        // ERRO
+        // ==================================================
+
+        .catch(function(error) {
+
+            console.error(
+                "Erro ao enviar solicitação:",
+                error
+            );
+
+
+            statusConsultoria.className =
+                "consultoria-status erro";
+
+            statusConsultoria.innerHTML = `
+                Não foi possível enviar sua solicitação.
+                <br>
+                Verifique sua conexão e tente novamente.
+            `;
+
+
+            botaoConsultoria.disabled = false;
+
+            botaoConsultoria.innerHTML = `
+                <i class="fa-regular fa-paper-plane"></i>
+                TENTAR NOVAMENTE
+            `;
+
+        });
+
+    });
+
+}
