@@ -1,7 +1,7 @@
 
 # AYKOS | Corporate Website
 
-### Digital Marketing & Regulatory Consulting
+### Regulatory Consulting
 
 A modern and responsive corporate website developed for AYKOS, a company focused on digital marketing solutions and pharmaceutical regulatory consulting.
 
@@ -34,10 +34,6 @@ git clone https://github.com/carolina-dev20/aykos-site.git
 ```
 
 Open the project folder and launch `index.html` in your browser.
-
-## 📸 Screenshots
-
-Desktop and mobile screenshots will be added here.
 
 ## 🎯 Project Goal
 
